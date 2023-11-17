@@ -1,4 +1,4 @@
-    /*! Your CSS Comment Header */
+/*! Your CSS Comment Header */
 
 /* Global Styles */
 body {
@@ -12,6 +12,7 @@ body.active {
 }
 
 .no-js #experience-timeline>div {
+  background: #e4e4ea;
   padding: 10px;
   margin-bottom: 10px;
 }
@@ -66,10 +67,12 @@ header {
 
 header ul {
   display: inline-block;
-  background: rgba(255,255,255,0);
+  background: rgba(255,255,255,0.5);
   text-align: center;
   padding: 10px;
   margin: 0;
+  border-bottom-right-radius: 4px;
+  border-bottom-left-radius: 4px;
 }
 
 header li {
@@ -118,12 +121,14 @@ header.sticky {
   z-index: 20;
   padding: 0 7px;
   border-radius: 4px;
+  background: #fff;
 }
 
 #mobile-menu-close {
   display: none;
   text-align: right;
   width: 100%;
+  background: #fff;
   font-size: 1.5em;
   padding-right: 15px;
   padding-top: 10px;
@@ -241,7 +246,7 @@ footer {
 }
 
 .background-alt {
-  background: rgba(0, 0, 0, 0);
+  background: #f5f2f2;
 }
 
 /* Lead Section Styles */
@@ -250,7 +255,7 @@ footer {
   height: 100vh;
   min-height: 500px;
   max-height: 1080px;
-  background: url(../images/lead-bg.jpg) fixed;
+  background: url(../images/lead-bg.jpg) fixed; /* Fixed background image */
   background-size: cover;
   padding: 15px;
   overflow: hidden;
@@ -308,7 +313,7 @@ footer {
   right: 0;
   bottom: 0;
   left: 0;
-  background: rgba(0, 0, 0, 0.6);
+  background: rgba(0, 0, 0, 0.6); /* Fixed background overlay */
   z-index: 1;
 }
 
@@ -352,7 +357,47 @@ footer {
   }
 }
 
-/* Experience Timeline Content  */
+/* Experience Section Styles */
+#experience {
+  padding: 50px 15px;
+  text-align: center;
+  border-bottom: 1px solid #dcd9d9;
+}
+
+#experience h2 {
+  : #543737;
+}
+
+#experience-timeline {
+  margin: 30px auto 0 auto;
+  position: relative;
+  max-width: 1000px;
+}
+
+#experience-timeline:before {
+  position: absolute;
+  content: '';
+  top: 0;
+  bottom: 0;
+  left: 303px;
+  right: auto;
+  height: 100%;
+  width: 3px;
+  background: #db3434;
+  z-index: 0;
+}
+
+#experience-timeline:after {
+  position: absolute;
+  content: '';
+  width: 3px;
+  height: 40px;
+  background: #db3434;
+  background: linear-gradient(to bottom, #db3434, rgba(219, 52, 52, 1));
+  top: 100%;
+  left: 303px;
+}
+
 .vtimeline-content {
   margin-left: 350px;
   background: #fff;
@@ -365,7 +410,7 @@ footer {
 .vtimeline-content h3 {
   font-size: 1.5em;
   font-weight: 300;
-  color: #374054;
+  : #543737;
   display: inline-block;
   margin: 0;
 }
@@ -373,17 +418,16 @@ footer {
 .vtimeline-content h4 {
   font-size: 1.2em;
   font-weight: 300;
-  color: #7e8890;
+  : #907e7e;
   margin: 0 0 15px 0;
 }
 
 .vtimeline-content p {
-  color: #74808a;
+  : #8a7474;
   font-size: 0.9em;
   margin: 0;
 }
 
-/* Experience Timeline Point  */
 .vtimeline-point {
   position: relative;
   display: block;
@@ -393,10 +437,10 @@ footer {
 
 .vtimeline-icon {
   position: relative;
-  color: #fff;
+  color: #eae4e4;
   width: 50px;
   height: 50px;
-  background: #3498db;
+  background: #db3434;
   border-radius: 50%;
   float: left;
   z-index: 99;
@@ -416,7 +460,7 @@ footer {
   left: 0;
   top: 10px;
   font-weight: 300;
-  color: #374054;
+  : #543737;
 }
 
 /* Education Section Styles */
@@ -427,7 +471,7 @@ footer {
 }
 
 #education h2 {
-  color: #543737;
+  : #543737;
   margin-bottom: 50px;
 }
 
@@ -443,7 +487,7 @@ footer {
   font-weight: 500;
   float: left;
   margin: 0;
-  color: #543737;
+  : #543737;
 }
 
 .education-block span {
@@ -472,6 +516,7 @@ footer {
 /* Projects Section Styles */
 #projects {
   padding: 50px 15px;
+  background: #fff;
   text-align: center;
 }
 
@@ -530,6 +575,7 @@ footer {
 #skills {
   padding: 50px 15px;
   text-align: center;
+  background: #fff
 }
 
 #skills h2 {
@@ -539,208 +585,497 @@ footer {
 
 #skills ul {
   display: block;
-  margin: 0 auto;
   padding: 0;
-  max-width: 800px;
+  margin: 0;
 }
 
-#skills li {
+#skills ul li {
   display: inline-block;
-  margin: 7px;
-  padding: 5px 10px;
-  color: #000000; /* Skills text color */
-  background: #fff; /* Skills text block background */
-  list-style: none;
-  cursor: default;
-  font-size: 1.2em;
+  margin: 0 15px;
 }
 
-/* Optional Section Styles */
-.optional-section {
+.skill {
+  font-weight: 500;
+  margin: 0 0 10px 0;
+}
+
+.skill-bar {
+  width: 100%;
+  height: 30px;
+  background: #f5f2f2;
+  border-radius: 5px;
+  position: relative;
+  margin: 0 0 20px 0;
+}
+
+.skill-bar-fill {
+  height: 100%;
+  border-radius: 5px;
+}
+
+.skill-html .skill-bar-fill {
+  width: 95%;
+  background: #ee5050;
+}
+
+.skill-css .skill-bar-fill {
+  width: 90%;
+  background: #ee5050;
+}
+
+.skill-js .skill-bar-fill {
+  width: 85%;
+  background: #ee5050;
+}
+
+.skill-python .skill-bar-fill {
+  width: 80%;
+  background: #ee5050;
+}
+
+.skill-java .skill-bar-fill {
+  width: 75%;
+  background: #ee5050;
+}
+
+/* Contact Section Styles */
+#contact {
   padding: 50px 15px;
   text-align: center;
+  background: #f5f2f2;
 }
 
-.optional-section h2 {
-  color: #000000;
+#contact h2 {
+  color: #543737;
+  margin-bottom: 30px;
 }
 
-.optional-section-block {
-  max-width: 700px;
-  margin: 0 auto 30px auto;
-  padding: 15px;
-  border: 1px solid #dcd9d9;
-  background: #fff;
+.contact-info {
+  display: inline-block;
   text-align: left;
 }
 
-.optional-section-block h3 {
-  font-weight: 500;
-  margin: 0 0 15px 0;
+.contact-info h3 {
+  font-size: 1.5em;
+  font-weight: 300;
   color: #543737;
-}
-
-.optional-section-block h4 {
-  color: #8a7474;
-  clear: both;
-  font-weight: 500;
   margin: 0 0 15px 0;
 }
 
-.optional-section-block p,
-.optional-section-block ul {
-  margin: 0 0 15px 0;
+.contact-info p {
   color: #8a7474;
+  margin: 0 0 15px 0;
   font-size: 0.9em;
 }
 
-.optional-section-block ul {
-  padding: 0 0 0 15px;
+.contact-form {
+  display: inline-block;
+  vertical-align: top;
+  margin-left: 20px;
+  text-align: left;
 }
 
-@media only screen and (max-width: 750px) {
-  #experience-timeline:before,
-  #experience-timeline:after {
-    left: 23px;
+.contact-form h3 {
+  font-size: 1.5em;
+  font-weight: 300;
+  color: #543737;
+  margin: 0 0 20px 0;
+}
+
+.contact-form p {
+  color: #8a7474;
+  margin: 0 0 20px 0;
+  font-size: 0.9em;
+}
+
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #dcd9d9;
+  border-radius: 3px;
+  color: #8a7474;
+  font-size: 1em;
+  margin-bottom: 20px;
+}
+
+.contact-form button {
+  background: #db3434;
+  color: #fff;
+  padding: 15px 25px;
+  border: none;
+  border-radius: 30px;
+  font-size: 1em;
+  cursor: pointer;
+}
+
+.contact-form button:hover {
+  background: #ee5050;
+}
+
+/* Responsive Styles */
+@media (max-width: 1024px) {
+  header ul {
+    font-size: 0.9em;
   }
 
-  .vtimeline-date {
-    width: auto;
-    text-align: left;
-    position: relative;
-    margin-bottom: 15px;
+  .education-block h3,
+  .education-block span,
+  .education-block h4 {
+    font-size: 1.0em;
+  }
+
+  .education-block p,
+  .education-block ul {
+    font-size: 0.8em;
+  }
+
+  .project-info h3 {
+    font-size: 1.2em;
+  }
+
+  .project-info p {
+    font-size: 0.8em;
+  }
+
+  .skill {
+    font-size: 1.0em;
+  }
+
+  .skill-bar {
+    height: 20px;
+  }
+
+  .contact-info h3 {
+    font-size: 1.2em;
+  }
+
+  .contact-info p {
+    font-size: 0.8em;
+  }
+
+  .contact-form h3 {
+    font-size: 1.2em;
+  }
+
+  .contact-form p {
+    font-size: 0.8em;
+  }
+
+  .contact-form input[type="text"],
+  .contact-form input[type="email"],
+  .contact-form textarea {
+    padding: 7px;
+  }
+
+  .contact-form button {
+    padding: 10px 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  header {
+    padding: 10px 0;
+  }
+
+  header ul {
+    display: none;
+    position: fixed;
+    top: 50px;
+    left: 0;
+    right: 0;
+    background: #fff;
+    border-bottom: 1px solid #dcd9d9;
+    z-index: 5;
+  }
+
+  header.active ul {
     display: block;
-    margin-left: 70px;
   }
 
-  .vtimeline-icon {
-    margin-left: 0;
+  header ul li {
+    display: block;
+    text-align: center;
+    padding: 10px 0;
   }
 
-  .vtimeline-content {
-    margin-left: 70px;
+  header ul li:last-child {
+    border: none;
   }
-}
 
-@media only screen and (max-width: 992px) {
-  #lead {
-    height: auto;
-    min-height: auto;
-    max-height: auto;
-    padding: 100px 15px;
+  header ul li a {
+    color: #543737;
+  }
+
+  header ul li a:hover {
+    color: #db3434;
+  }
+
+  #mobile-menu-open {
+    display: block;
+  }
+
+  #mobile-menu-close {
+    display: block;
+  }
+
+  header.sticky ul {
+    top: 85px;
+  }
+
+  .background-alt {
+    background: #fff;
   }
 
   #lead-content {
-    position: relative;
-    transform: none;
-    left: auto;
-    top: auto;
+    text-align: center;
   }
 
   #lead-content h1 {
-    font-size: 3em;
+    font-size: 4em;
+    line-height: 1.2em;
   }
 
   #lead-content h2 {
     font-size: 1.75em;
   }
 
-  #about {
-    text-align: center;
+  #lead-content h3 {
+    font-size: 0.9em;
   }
 
-  #about p {
-    text-align: center;
-  }
-}
-
-@media only screen and (max-width: 768px) {
-  header {
-    position: fixed;
+  #lead-overlay {
     display: none;
-    z-index: 999;
-    animation: none;
-    bottom: 0;
-    height: 100%;
-  }
-
-  #mobile-menu-open,
-  #mobile-menu-close {
-    display: block;
-  }
-
-  #menu {
-    height: 100%;
-    overflow-y: auto;
-    box-shadow: none;
-    border-radius: 0;
-    width: 100%;
-  }
-
-  #menu li {
-    display: block;
-    margin-bottom: 10px;
-  }
-
-  #lead-content h1 {
-    font-size: 2em;
-  }
-
-  #lead-content h2 {
-    font-size: 1.3em;
-  }
-
-  #lead-content a {
-    padding: 10px 20px;
   }
 
   #lead-down {
-    display: none;
+    bottom: 25px;
+  }
+
+  #lead-down span {
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    border: 2px solid #fff;
+  }
+
+  #experience-timeline {
+    margin: 0;
+  }
+
+  .vtimeline-content {
+    margin-left: 0;
+    background: none;
+    border: none;
+    padding: 0;
+  }
+
+  .vtimeline-icon {
+    float: none;
+    margin-left: 0;
+  }
+
+  .vtimeline-date {
+    width: 100%;
+    text-align: center;
+    position: relative;
+    margin: 10px 0 20px 0;
+  }
+
+  #education h2 {
+    margin-bottom: 30px;
   }
 
   .education-block h3,
-  .education-block span {
-    float: none;
+  .education-block span,
+  .education-block h4 {
+    font-size: 1.2em;
+  }
+
+  .education-block p,
+  .education-block ul {
+    font-size: 0.8em;
+  }
+
+  .project {
+    overflow: visible;
   }
 
   .project-image {
-    display: none;
+    float: none;
+    margin: 0 auto 15px auto;
   }
 
   .project-info {
     position: relative;
     margin: 0;
-    padding: 30px 15px;
-    top: auto;
+    padding: 15px;
     transform: none;
   }
 
-  footer {
-    text-align: center;
+  .project-info h3 {
+    font-size: 1.2em;
   }
 
-  .social {
-    text-align: center;
+  .project-info p {
+    font-size: 0.8em;
+  }
+
+  .no-image .project-info {
+    padding: 15px;
+  }
+
+  #skills ul li {
+    margin: 0 10px;
+  }
+
+  .contact-info,
+  .contact-form {
+    display: block;
+    margin: 0 auto 30px auto;
+  }
+
+  .contact-form {
+    margin-left: 0;
+  }
+
+  .contact-form input[type="text"],
+  .contact-form input[type="email"],
+  .contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #dcd9d9;
+    border-radius: 3px;
+    color: #8a7474;
+    font-size: 1em;
+    margin-bottom: 20px;
+  }
+
+  .contact-form button {
+    background: #db3434;
+    color: #fff;
+    padding: 15px 25px;
+    border: none;
+    border-radius: 30px;
+    font-size: 1em;
+    cursor: pointer;
   }
 }
 
-@media only screen and (max-width: 480px) {
+@media (max-width: 480px) {
+  header ul {
+    top: 50px;
+  }
+
+  header.sticky ul {
+    top: 85px;
+  }
+
   #lead-content h1 {
-    font-size: 1.5em;
+    font-size: 3.5em;
   }
 
   #lead-content h2 {
-    font-size: 1em;
+    font-size: 1.5em;
   }
 
   #lead-content h3 {
-    font-size: 1em;
+    font-size: 0.8em;
   }
 
-  #lead-content a {
-    font-size: 0.9em;
-    padding: 5px 10px;
+  #experience-timeline:before {
+    left: 51px;
+  }
+
+  .vtimeline-date {
+    left: 0;
+  }
+
+  .project-info h3 {
+    font-size: 1.0em;
+  }
+
+  .project-info p {
+    font-size: 0.8em;
+  }
+
+  .contact-form h3 {
+    font-size: 1.0em;
+  }
+
+  .contact-form input[type="text"],
+  .contact-form input[type="email"],
+  .contact-form textarea {
+    padding: 7px;
+  }
+
+  .contact-form button {
+    padding: 10px 20px;
   }
 }
 
-    
+/* Animation Styles */
+.animated {
+  animation-duration: 1s;
+  animation-fill-mode: both;
+  opacity: 0;
+}
+
+.fadeIn {
+  animation-name: fadeIn;
+}
+
+.fadeInLeft {
+  animation-name: fadeInLeft;
+}
+
+.fadeInRight {
+  animation-name: fadeInRight;
+}
+
+.fadeInUp {
+  animation-name: fadeInUp;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

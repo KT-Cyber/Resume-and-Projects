@@ -339,10 +339,12 @@ footer {
 #about {
   padding: 75px 15px;
   border-bottom: 1px solid #dcd9d9;
+  text-align: center;
 }
 
 #about h2 {
   color: #374054;
+  display: inline-block;
 }
 
 #about p {

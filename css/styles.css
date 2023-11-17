@@ -367,6 +367,7 @@ footer {
   margin: 30px auto 0 auto;
   position: relative;
   max-width: 1000px;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.08), 0 3px 6px rgba(0, 0, 0, 0.15);
 }
 
 #experience-timeline:before {
@@ -395,7 +396,7 @@ footer {
 
 .vtimeline-content {
   margin-left: 350px;
-  background: #1234;
+  background: #fff;
   border: 1px solid #e6e6e6;
   padding: 15px;
   border-radius: 3px;

@@ -477,6 +477,7 @@ footer {
   padding: 15px;
   border: 1px solid #dcd9d9;
   text-align: left;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.08), 0 3px 6px rgba(0, 0, 0, 0.15); /* Adjust the values as needed */
 }
 
 .education-block h3 {
